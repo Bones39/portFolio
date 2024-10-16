@@ -1,11 +1,12 @@
-.container {
+.app-container {
 	display: grid;
 	height: 100vh;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 02fr 1fr;
+	grid-template-rows: 0.06fr 1fr;
 	grid-template-areas: 
 		"logo nav nav nav"
 		"main1 main2 main2 main2";
+		font-family: 'jetBrainsMono';
 }
 
 nav {
@@ -14,7 +15,7 @@ nav {
 }
 
 #logo {
-	grid-area: logo;
+	grid-area: logo; 
 	background-color: aquamarine;
 }
 
@@ -26,4 +27,8 @@ nav {
 #main2 {
 	grid-area: main2;
 	background-color: lightblue;
+}
+@font-face {
+	font-family: "jetBrainsMono";
+	src: url("..\public\JetBrainsMono-VariableFont_wght.ttf");
 }

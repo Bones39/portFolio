@@ -29,7 +29,7 @@ function App() {
 	// 	<GridItem area='main1' bg='blue'>main 1</GridItem>
 	// 	<GridItem area='main2' bg='green'>main 2</GridItem>
 	// </Grid>
-	<div className='container'>
+	<div className='app-container'>
 		<div id='logo'>Logo</div>
 		<nav id='navBar'>NavBar</nav>
 		<div id='main1'>Main 1</div>
