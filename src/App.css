@@ -28,6 +28,20 @@ nav {
 	grid-area: main2;
 	background-color: lightblue;
 }
+
+@media screen and (max-widht: 500px) {
+	.app-container {
+		grid-template-columns: 1fr;
+		grid-template-rows: 0.05fr 0.06fr 1fr 1fr;
+		grid-template-areas: 
+			"logo"
+			"nav"
+			"main1"
+			"main2";
+			font-family: 'jetBrainsMono';
+	}
+}
+
 @font-face {
 	font-family: "jetBrainsMono";
 	src: url("..\public\JetBrainsMono-VariableFont_wght.ttf");

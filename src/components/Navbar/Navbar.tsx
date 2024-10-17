@@ -3,7 +3,15 @@ import styles from "./Navbar.module.css";
 
 const Navbar = () => {
 	return (
-		<div className="jetbrains-mono-NavBar">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit, minima.</div>
+		<div className={styles.navBarContainer}>
+			{/* <div className={styles.navButton}><a href="https://example.com">Click Me</a></div> */}
+			<button className={styles.navButton}>Home</button>
+			<button className={styles.navButton}>Work</button>
+			<button className={styles.navButton}>Contact</button>
+	{/* 		<button>Home</button>
+			<button>Work</button>
+			<button>Contact</button> */}
+		</div>
 		// <Box width='100%'>
 		// 	<List display="flex" justifyContent="end">
 		// 		<ListItem>

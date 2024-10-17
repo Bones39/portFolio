@@ -31,7 +31,9 @@ function App() {
 	// </Grid>
 	<div className='app-container'>
 		<div id='logo'>Logo</div>
-		<nav id='navBar'>NavBar</nav>
+		<nav id='navBar'>
+			<Navbar></Navbar>
+		</nav>
 		<div id='main1'>Main 1</div>
 		<div id='main2'>Main 2</div>
 	</div>

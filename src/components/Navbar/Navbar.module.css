@@ -1,22 +1,15 @@
+
+.navBarContainer {
+	display: flex;
+	justify-content: flex-end;
+	width: 1fr;
+}
+
 .navButton {
-	padding: 10px;
-	background-color: aqua;
-	font-family: jetBrains;
-}
-
-@font-face {
-	font-family: jetBrains;
-	src: url(..\..\..\public\fonts\ttf\JetBrainsMonoNL-Regular.ttf);
-}
-
-.jetBrainsFont {
-	font-family: jetBrains;
-}
-
-.jetbrains-mono-NavBar{
-  font-family: "JetBrains Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 40;
-  font-style: normal;
-  src: url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+	margin-inline: 2em;
+	cursor: pointer;
+	/* border: none;
+	text-align: center;
+	text-decoration: none; */
+	/* background-color: rgb(255, 0, 115); */
 }
