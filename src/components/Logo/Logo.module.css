@@ -1,8 +1,17 @@
 .logoContainer {
 	font-size: 1.5em;
 	font-weight: 450;
-	padding-top: 0.25em;
+	padding: 0.25em 0em;
 	margin-left: 0.5em;
+	vertical-align: middle;
+}
+
+
+@media (max-width: 600px) {
+	.logoContainer {
+		text-align: center;
+		vertical-align: middle;
+	}
 }
 
 .boldGreen {

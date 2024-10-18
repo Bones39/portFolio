@@ -3,7 +3,14 @@
 	display: flex;
 	justify-content: flex-end;
 	width: 1fr;
-	margin-top: 0.8em;
+	vertical-align: middle;
+	padding: 0.8em 0em;
+}
+
+@media (max-width: 600px) {
+	.navBarContainer {
+		justify-content:space-around;
+	}
 }
 
 .navButton {
