@@ -6,7 +6,21 @@
 	grid-template-areas: 
 		"logo nav nav nav"
 		"main1 main2 main2 main2";
-		font-family: 'jetBrainsMono';
+	font-family: 'jetBrainsMono';
+}
+
+@media (max-width: 600px) {
+	.app-container {
+	display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 0.05fr 0.06fr 1fr 1fr;
+		grid-template-areas: 
+			"logo"
+			"nav"
+			"main1"
+			"main2";
+			font-family: 'jetBrainsMono';
+	}
 }
 
 nav {
@@ -27,19 +41,6 @@ nav {
 #main2 {
 	grid-area: main2;
 	background-color: lightblue;
-}
-
-@media screen and (max-widht: 500px) {
-	.app-container {
-		grid-template-columns: 1fr;
-		grid-template-rows: 0.05fr 0.06fr 1fr 1fr;
-		grid-template-areas: 
-			"logo"
-			"nav"
-			"main1"
-			"main2";
-			font-family: 'jetBrainsMono';
-	}
 }
 
 @font-face {
