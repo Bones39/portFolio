@@ -3,13 +3,11 @@
 	display: flex;
 	justify-content: flex-end;
 	width: 1fr;
+	margin-top: 0.8em;
 }
 
 .navButton {
 	margin-inline: 2em;
 	cursor: pointer;
-	/* border: none;
-	text-align: center;
-	text-decoration: none; */
-	/* background-color: rgb(255, 0, 115); */
+	text-decoration: none;
 }

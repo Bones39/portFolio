@@ -4,10 +4,9 @@ import styles from "./Navbar.module.css";
 const Navbar = () => {
 	return (
 		<div className={styles.navBarContainer}>
-			{/* <div className={styles.navButton}><a href="https://example.com">Click Me</a></div> */}
-			<button className={styles.navButton}>Home</button>
-			<button className={styles.navButton}>Work</button>
-			<button className={styles.navButton}>Contact</button>
+			<div><a className={styles.navButton} href="https://example.com">Home</a></div>
+			<div><a className={styles.navButton} href="https://example.com">Work</a></div>
+			<div><a className={styles.navButton} href="https://example.com">Contact</a></div>
 	{/* 		<button>Home</button>
 			<button>Work</button>
 			<button>Contact</button> */}
