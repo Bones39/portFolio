@@ -30,7 +30,7 @@ nav {
 
 #logo {
 	grid-area: logo; 
-	background-color: aquamarine;
+	background-color: rgb(159, 127, 255);
 }
 
 #main1 {

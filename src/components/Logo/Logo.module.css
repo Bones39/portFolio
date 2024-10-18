@@ -1,0 +1,11 @@
+.logoContainer {
+	font-size: 1.5em;
+	font-weight: 450;
+	padding-top: 0.25em;
+	margin-left: 0.5em;
+}
+
+.boldGreen {
+	font-weight: bold;
+	color: aquamarine;
+}
