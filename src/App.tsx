@@ -1,6 +1,7 @@
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import Logo from './components/Logo/Logo'
+import DescriptionContainer from './components/DescriptionContainer/DescriptionContainer'
 
 function App() {
 
@@ -12,7 +13,9 @@ function App() {
 		<nav id='navBar'>
 			<Navbar></Navbar>
 		</nav>
-		<div id='main1'>Main 1</div>
+		<div id='main1'>
+			<DescriptionContainer></DescriptionContainer>
+		</div>
 		<div id='main2'>Main 2</div>
 	</div>
 

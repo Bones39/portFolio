@@ -1,4 +1,5 @@
 /* site for shdes of gray: https://www.color-meanings.com/shades-of-gray-color-names-html-hex-rgb-codes/ */
+/* for hacking green: https://brand.hackernoon.com/visual-assets/color-palettes */
 /* Chosen gray: #charcoal: 36454F */
 .app-container {
 	display: grid;
@@ -7,7 +8,7 @@
 	grid-template-rows: 0.06fr 1fr;
 	grid-template-areas: 
 		"logo nav nav nav"
-		"main1 main2 main2 main2";
+		"main1 main1 main1 main2";
 	font-family: 'jetBrainsMono';
 	color: whitesmoke;
 }
@@ -38,7 +39,7 @@ nav {
 
 #main1 {
 	grid-area: main1 ;
-	background-color: coral;
+	background-color: #36454F;
 }
 
 #main2 {
