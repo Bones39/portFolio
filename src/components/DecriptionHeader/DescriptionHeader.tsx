@@ -18,18 +18,59 @@ const DescriptionHeader = () => {
 		const jobRef = useRef<HTMLSpanElement>(null);
 		//
 
-		useEffect(() => {
+		const randomizeDisplay = (nbOfRenders: number) => {
+			let iteration = 0;
+			let randomIteratedDisplay = displayJob
+				.split("")
+				.map((letter, index) => {
+					// use the original letter for the first n th letter 
+					if (index < 4) {
+						return jobs[1][index];
+					}
+					// else, use a random letter
+					iteration++;
+					return letters[Math.floor(Math.random()*26)];
+				})
+				.join("");
+				// console.log(iteration);
+				// console.log("lenght " + displayJob.length);
+				
+				if (iteration < displayJob.length) {
+					setDisplayJob(randomIteratedDisplay);
+				}
+			
+		}
+		setTimeout(() => {
+			let nbOfRenders = 1;
+			randomizeDisplay(nbOfRenders);
+			nbOfRenders++
+			console.log(nbOfRenders);
+			
+		}, 500); //the time out is useless...once inside it is the render that dictates the number/s of renders
+		/* useEffect(() => {
 			const controller = new AbortController();
-			const interval = setInterval(()=>{
+			const interval = setInterval(()=> {
 				console.log("been called! " + jobRef.current?.innerText);
 				if (jobRef.current?.innerText === jobs[0]) {
-					jobRef.current.innerText = jobs[1];
+					const nestedInterval = setInterval(()=>{
+						var randomIteratedDisplay = jobs[1]
+							.split("")
+							.map((letter, index) => {
+								if (index < 4) {
+									return jobs[1][index];
+								}
+								return letters[Math.floor(Math.random()*26)];
+							})
+							.join("");
+					if (jobRef.current !=null) jobRef.current.innerText = randomIteratedDisplay;
+					clearInterval(nestedInterval);
+					},30); 
 				} else if (jobRef.current && jobRef.current.innerText === jobs[1]) {
 					jobRef.current.innerText = jobs[0];
 				}
-			},3000)
-			return () => controller.abort();
-		}, [])
+			}, 15000)
+			return () => {clearInterval(interval);controller.abort();}
+		}, []) */
 	return(
 		<h1>I am a <span ref={jobRef} className={styles.emphasized}>{displayJob}</span></h1>
 	)

@@ -8,7 +8,7 @@ const DescriptionContainer = ()	=> {
 		var modified = displayJob
 			.split("")
 			.map((letter, index) => {
-				if (index < iteration) {
+				if (index < 4) {
 					return jobs[1][index];
 				}
 				return letters[Math.floor(Math.random()*26)];
