@@ -12,13 +12,14 @@ import styles from "./DescriptionHeader.module.css";
 } */
 
 const DescriptionHeader = () => {
-		const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		const jobs = ["front end web designer", "free lancer"];
 		const [displayJob, setDisplayJob] = useState(jobs[1]);
+		const [count, setCount] = useState(0);
 		const jobRef = useRef<HTMLSpanElement>(null);
 		//
 
-		const randomizeDisplay = (nbOfRenders: number) => {
+		/* const randomizeDisplay = (nbOfRenders: number) => {
 			let iteration = 0;
 			let randomIteratedDisplay = displayJob
 				.split("")
@@ -46,13 +47,18 @@ const DescriptionHeader = () => {
 			nbOfRenders++
 			console.log(nbOfRenders);
 			
-		}, 500); //the time out is useless...once inside it is the render that dictates the number/s of renders
-		/* useEffect(() => {
+		}, 1500); //the time out is useless...once inside it is the render that dictates the number/s of renders */
+
+		// var count = 0;
+
+		useEffect(() => {
+			// console.log(`count = ${count}`);
+			let innerCount = count + 1/4;
 			const controller = new AbortController();
 			const interval = setInterval(()=> {
-				console.log("been called! " + jobRef.current?.innerText);
-				if (jobRef.current?.innerText === jobs[0]) {
-					const nestedInterval = setInterval(()=>{
+				// console.log("been called! " + jobRef.current?.innerText);
+				// if (jobRef.current?.innerText === jobs[0]) {
+					/* const nestedInterval = setInterval(()=>{
 						var randomIteratedDisplay = jobs[1]
 							.split("")
 							.map((letter, index) => {
@@ -64,13 +70,24 @@ const DescriptionHeader = () => {
 							.join("");
 					if (jobRef.current !=null) jobRef.current.innerText = randomIteratedDisplay;
 					clearInterval(nestedInterval);
-					},30); 
-				} else if (jobRef.current && jobRef.current.innerText === jobs[1]) {
-					jobRef.current.innerText = jobs[0];
-				}
-			}, 15000)
+					},30);  */
+					var randomIteratedDisplay = jobs[1]
+						.split("")
+						.map((letter, index) => {
+							if (index < innerCount) {
+								return jobs[1][index];
+							}
+							return letters[Math.floor(Math.random()*52)];
+						})
+						.join("");
+					setDisplayJob(randomIteratedDisplay);
+				// } else if (jobRef.current && jobRef.current.innerText === jobs[1]) {
+					// setDisplayJob(jobs[0]);
+				// }
+			setCount(innerCount);
+			}, 80)
 			return () => {clearInterval(interval);controller.abort();}
-		}, []) */
+		}, [displayJob]) // need the displayJob in the dependencie array to break the initial loop of set intervalle and rebuild the useEffect each time
 	return(
 		<h1>I am a <span ref={jobRef} className={styles.emphasized}>{displayJob}</span></h1>
 	)
