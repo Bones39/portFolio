@@ -6,15 +6,16 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./DescriptionHeader.module.css";
 
-/* interface Props {
-	displayedJob: string;
-	onHovered: () => void;
-} */
+interface Props {
+	displayJob: string;
+	randomInitialDisplay: string;
+	// setDisplayJob: (displayJob: string) => void;
+}
 
-const DescriptionHeader = () => {
+const DescriptionHeader = ({displayJob, randomInitialDisplay}: Props) => {
 		const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		const jobs = ["front end web designer", "free lancer"];
-		const [displayJob, setDisplayJob] = useState(jobs[1]);
+		const [innerDisplayJob, setInnerDisplayJob] = useState(randomInitialDisplay);
 		const [count, setCount] = useState(0);
 		const jobRef = useRef<HTMLSpanElement>(null);
 		useEffect(() => {
@@ -25,29 +26,33 @@ const DescriptionHeader = () => {
 			// reset inner count
 			// setCount(0);
 			const interval = setInterval(()=> {
-				let innerCount = count + 1/5;
-				var randomIteratedDisplay = jobs[1]
+				let innerCount = count + 1/4;
+				// generate a random word
+				var randomIteratedDisplay = displayJob
 					.split("")
 					.map((letter, index) => {
 						if (index < innerCount) {
-							return jobs[1][index];
+							return displayJob[index];
 						}
 						return letters[Math.floor(Math.random()*52)];
 					})
 					.join("");
-					setDisplayJob(randomIteratedDisplay);
-				if (randomIteratedDisplay === jobs[1]) {
+					setInnerDisplayJob(randomIteratedDisplay);
+				if (randomIteratedDisplay === displayJob) {
 					console.log(`should be cleared!`);
+					setCount(0);
+					innerCount = 0;
 					// stop the rendering when the word is complete
 					clearInterval(interval);
 				}
 				console.log("rendered");
-			setCount(innerCount);
+				clearInterval(interval);
+				setCount(innerCount);
 			}, 50);
-			return () => {clearInterval(interval);controller.abort();}
-		}, [displayJob]) // need the displayJob in the dependencie array to break the initial loop of set intervalle and rebuild the useEffect each time
+			return () => {controller.abort();}
+		}, [innerDisplayJob, displayJob]) // need the displayJob in the dependencie array to break the initial loop of set intervalle and rebuild the useEffect each time
 	return(
-		<h1>I am a <span ref={jobRef} className={styles.emphasized}>{displayJob}</span></h1>
+		<h1>I am a <span ref={jobRef} className={styles.emphasized}>{innerDisplayJob}</span></h1>
 	)
 }
 export default DescriptionHeader;
