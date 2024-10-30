@@ -9,10 +9,12 @@ import styles from "./DescriptionHeader.module.css";
 interface Props {
 	displayJob: string;
 	randomInitialDisplay: string;
+	changeIndex: boolean;
+	setChangeIndex: (changeIndex: boolean) => void;
 	// setDisplayJob: (displayJob: string) => void;
 }
 
-const DescriptionHeader = ({displayJob, randomInitialDisplay}: Props) => {
+const DescriptionHeader = ({displayJob, randomInitialDisplay, changeIndex, setChangeIndex}: Props) => {
 		const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		const jobs = ["front end web designer", "free lancer"];
 		const [innerDisplayJob, setInnerDisplayJob] = useState(randomInitialDisplay);
@@ -38,19 +40,28 @@ const DescriptionHeader = ({displayJob, randomInitialDisplay}: Props) => {
 					})
 					.join("");
 					setInnerDisplayJob(randomIteratedDisplay);
-				if (randomIteratedDisplay === displayJob) {
-					console.log(`should be cleared!`);
-					setCount(0);
-					innerCount = 0;
-					// stop the rendering when the word is complete
 					clearInterval(interval);
+					if (randomIteratedDisplay === displayJob) {
+						setInnerDisplayJob(randomIteratedDisplay);
+						console.log(`should be cleared!`);
+						// setCount(0);
+						// innerCount = 0;
+						// stop the rendering when the word is complete
+						clearInterval(interval);
+						setTimeout(() => {
+							if (!changeIndex) {
+								console.log("change the index!");
+								setChangeIndex(true);
+							}
+						}, 10000);
 				}
 				console.log("rendered");
+				console.log(innerCount);
 				clearInterval(interval);
 				setCount(innerCount);
 			}, 50);
-			return () => {controller.abort();}
-		}, [innerDisplayJob, displayJob]) // need the displayJob in the dependencie array to break the initial loop of set intervalle and rebuild the useEffect each time
+			return () => {clearInterval(interval);controller.abort();}
+		}, [innerDisplayJob]) // need the displayJob in the dependencie array to break the initial loop of set intervalle and rebuild the useEffect each time
 	return(
 		<h1>I am a <span ref={jobRef} className={styles.emphasized}>{innerDisplayJob}</span></h1>
 	)

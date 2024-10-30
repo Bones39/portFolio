@@ -8,28 +8,25 @@ const DescriptionContainer = ()	=> {
 	const jobs = ["front end web designer", "free lancer"];
 	const [displayJob, setDisplayJob] = useState(jobs[1]);
 	const [randomInitialDisplay, setRandomInitialDisplay] = useState("test");
+	const [changeIndex, setChangeIndex] = useState(false); // this state will only be modified by the chhild component when it finishes rendering
 
 	useEffect(() => {
-		const mainInterval = setInterval(()=>{
-			setIndex((index + 1) % jobs.length);
-			console.log("from parent " + jobs[index]);
-			var random = jobs[index]
-				.split("")
-				.map((letter, index) => {
-					return letters[Math.floor(Math.random()*52)];
-				})
-				.join("");
-			setDisplayJob(jobs[index]);
-			setRandomInitialDisplay(random);
-			// clear the intervalle here to avoid infinite stacking of intervalle and erratic display
-			clearInterval(mainInterval);
-		}, 10000);
-		// return clearInterval(mainInterval);
-	}, [displayJob]);
+		setIndex((index + 1) % jobs.length);
+		console.log("from parent " + jobs[index]);
+		var random = jobs[index]
+			.split("")
+			.map((letter, index) => {
+				return letters[Math.floor(Math.random()*52)];
+			})
+			.join("");
+		setDisplayJob(jobs[index]);
+		setRandomInitialDisplay(random);
+		console.log("random " + randomInitialDisplay);
+	}, [changeIndex]);
 	
 	return(
 		<div className="descriptionContainer">
-			<DescriptionHeader displayJob={displayJob} randomInitialDisplay={randomInitialDisplay}></DescriptionHeader>
+			<DescriptionHeader displayJob={displayJob} changeIndex={changeIndex} setChangeIndex={setChangeIndex} randomInitialDisplay={randomInitialDisplay}></DescriptionHeader>
 		</div>
 	)
 }
