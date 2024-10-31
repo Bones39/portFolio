@@ -8,18 +8,22 @@ import styles from "./DescriptionHeader.module.css";
 
 interface Props {
 	displayJob: string;
-	randomInitialDisplay: string;
+	// randomInitialDisplay: string;
 	changeIndex: boolean;
 	setChangeIndex: (changeIndex: boolean) => void;
-	// setDisplayJob: (displayJob: string) => void;
+	setInnerDisplayJob: (displayJob: string) => void;
+	innerDisplayJob: string;
 }
 
-const DescriptionHeader = ({displayJob, randomInitialDisplay, changeIndex, setChangeIndex}: Props) => {
+const DescriptionHeader = ({displayJob, setInnerDisplayJob, changeIndex, setChangeIndex, innerDisplayJob}: Props) => {
 		const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		const jobs = ["front end web designer", "free lancer"];
-		const [innerDisplayJob, setInnerDisplayJob] = useState(randomInitialDisplay);
+		// const [innerDisplayJob, setInnerDisplayJob] = useState(randomInitialDisplay);
 		const [count, setCount] = useState(0);
 		const jobRef = useRef<HTMLSpanElement>(null);
+
+		let innerCount = 0;
+
 		useEffect(() => {
 			const controller = new AbortController();
 			// setIndex((index + 1) % jobs.length);
@@ -28,9 +32,10 @@ const DescriptionHeader = ({displayJob, randomInitialDisplay, changeIndex, setCh
 			// reset inner count
 			// setCount(0);
 			const interval = setInterval(()=> {
-				let innerCount = count + 1/4;
+				innerCount = displayJob.length < innerCount ? 0 : count + 1/4;
 				// generate a random word
-				var randomIteratedDisplay = displayJob
+				if (innerDisplayJob !== displayJob) {
+					var randomIteratedDisplay = displayJob
 					.split("")
 					.map((letter, index) => {
 						if (index < innerCount) {
@@ -44,21 +49,26 @@ const DescriptionHeader = ({displayJob, randomInitialDisplay, changeIndex, setCh
 					if (randomIteratedDisplay === displayJob) {
 						setInnerDisplayJob(randomIteratedDisplay);
 						console.log(`should be cleared!`);
-						// setCount(0);
-						// innerCount = 0;
+						// if inner count is reset here: infinite rendering
+						setCount(0);
+						innerCount = 0;
 						// stop the rendering when the word is complete
 						clearInterval(interval);
+						console.log("from child change Index " + changeIndex);
 						setTimeout(() => {
 							if (!changeIndex) {
 								console.log("change the index!");
 								setChangeIndex(true);
 							}
-						}, 10000);
+						}, 8000);
+					}
+					console.log("rendered");
+					console.log(innerCount);
+					setCount(innerCount);
+					clearInterval(interval);
+				} else {
+					clearInterval(interval);
 				}
-				console.log("rendered");
-				console.log(innerCount);
-				clearInterval(interval);
-				setCount(innerCount);
 			}, 50);
 			return () => {clearInterval(interval);controller.abort();}
 		}, [innerDisplayJob]) // need the displayJob in the dependencie array to break the initial loop of set intervalle and rebuild the useEffect each time
