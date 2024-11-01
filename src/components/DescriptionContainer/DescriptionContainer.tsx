@@ -9,7 +9,7 @@ const DescriptionContainer = ()	=> {
 	const [displayJob, setDisplayJob] = useState(jobs[1]);
 	// const [randomInitialDisplay, setRandomInitialDisplay] = useState("test");
 	const [innerDisplayJob, setInnerDisplayJob] = useState("randomInitialDisplay");
-	const [changeIndex, setChangeIndex] = useState(false); // this state will only be modified by the child component when it finishes rendering
+	const [changeIndex, setChangeIndex] = useState(() => false); // this state will only be modified by the child component when it finishes rendering
 
 	useEffect(() => {
 		setIndex((index + 1) % jobs.length);
