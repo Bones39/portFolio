@@ -15,7 +15,7 @@ const DescriptionHeader = () => {
 		const [nbIterationPerLetter, setNbIterationPerLetter] = useState(0);
 		
 		useEffect(() => {
-			console.log(`rendered with initial word: ${jobs[index]}, nbIterationPerLetter: ${nbIterationPerLetter}`);
+			// console.log(`rendered with initial word: ${jobs[index]}, nbIterationPerLetter: ${nbIterationPerLetter}`);
 			const interval = setInterval(()=> {
 				var initialWord = jobs[index];
 				// generate a random string sequence to display
@@ -40,7 +40,7 @@ const DescriptionHeader = () => {
 					// on the last iteration, set a time out to change the initial word and reset the random iteration cycle
 					if (nbIterationPerLetter === initialWord.length -1 + 1/4) {
 						let timeOut = setTimeout(() => {
-							console.log(`back to initial word, index need to be changed to rerender again with a new initial word`);
+							// console.log(`back to initial word, index need to be changed to rerender again with a new initial word`);
 							// back to initial word, index need to be changed to rerender again with a new initial word, and reset interanl variable
 							setNbIterationPerLetter(0);
 							setIndex((index + 1) % jobs.length);
