@@ -18,7 +18,10 @@ function App() {
 			<DescriptionContainer></DescriptionContainer>
 		</div>
 		<div id='main2'>
-		<ProfilPicture></ProfilPicture>
+			<ProfilPicture></ProfilPicture>
+		</div>
+		<div id="cardContainer">
+			<span>card container</span>
 		</div>
 	</div>
 

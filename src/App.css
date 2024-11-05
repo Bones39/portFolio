@@ -5,10 +5,11 @@
 	display: grid;
 	height: 100vh;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 0.06fr 1fr;
+	grid-template-rows: 0.06fr 1fr 1fr;
 	grid-template-areas: 
 		"logo nav nav nav"
-		"main1 main1 main1 main2";
+		"main1 main1 main1 main2"
+		"cardContainer cardContainer cardContainer cardContainer";
 	font-family: 'jetBrainsMono';
 	color: whitesmoke;
 }
@@ -38,13 +39,18 @@ nav {
 }
 
 #main1 {
-	grid-area: main1 ;
+	grid-area: main1;
 	background-color: #36454F;
 }
 
 #main2 {
 	grid-area: main2;
 	background-color: #36454F;
+}
+
+#cardContainer {
+	grid-area: cardContainer;
+	background-color: blueviolet;
 }
 
 @font-face {
