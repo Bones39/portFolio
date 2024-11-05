@@ -1,6 +1,8 @@
 .profilPicture {
 	border-radius: 50%;
-	width: 100px;
-	height: 100px;
+	width: 15em;
+	height: 15em;
 	object-fit: cover;
+	margin-top: 3em;
+	margin-left: 3.8em;
 }
