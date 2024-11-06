@@ -30,7 +30,7 @@ const DescriptionHeader = () => {
 						return letters[Math.floor(Math.random()*52)];
 					}) 
 					.join("");
-				// keep endering as long as the last iteration is not reached or the word is not back to initial
+				// keep rendering as long as the last iteration is not reached or the word is not back to initial
 				if (nbIterationPerLetter <= initialWord.length -1 + 1/4) {
 					// increment each time the word is fully computed
 					setNbIterationPerLetter( nbIterationPerLetter + 1/4);
@@ -51,7 +51,7 @@ const DescriptionHeader = () => {
 				}
 				// clear the intervalle each time the word is fully rendered
 				return clearInterval(interval);
-			}, 50);
+			}, 35);
 		}, [innerDisplayJob, index])
 	return(
 		<h1>I am a <span className={styles.emphasized}>{innerDisplayJob}</span></h1>
