@@ -9,7 +9,7 @@
 	grid-template-areas: 
 		"logo nav nav nav"
 		"main1 main1 main1 main2"
-		"cardContainer cardContainer cardContainer cardContainer";
+		"projectsAndSkills projectsAndSkills projectsAndSkills projectsAndSkills";
 	font-family: 'jetBrainsMono';
 	color: whitesmoke;
 }
@@ -48,8 +48,8 @@ nav {
 	background-color: #36454F;
 }
 
-#cardContainer {
-	grid-area: cardContainer;
+#projectsAndSkills {
+	grid-area: projectsAndSkills;
 	background-color: blueviolet;
 }
 

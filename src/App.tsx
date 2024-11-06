@@ -3,6 +3,7 @@ import Navbar from './components/Navbar/Navbar'
 import Logo from './components/Logo/Logo'
 import DescriptionContainer from './components/DescriptionContainer/DescriptionContainer'
 import ProfilPicture from './components/ProfilPicture/ProfilPicture'
+import CardContainer from './components/CardContainer/CardContainer'
 
 function App() {
 
@@ -20,8 +21,9 @@ function App() {
 		<div id='main2'>
 			<ProfilPicture></ProfilPicture>
 		</div>
-		<div id="cardContainer">
-			<span>card container</span>
+		<div id="projectsAndSkills">
+			<span>Project and skill</span>
+			<CardContainer></CardContainer>
 		</div>
 	</div>
 
