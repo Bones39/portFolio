@@ -3,7 +3,7 @@
 	position: relative;
 	flex-direction: column;
 	height: 280px;
-	width: 33em;
+	width: 310px;
 	min-width: 250px;
 	padding: 1.5rem;
 
@@ -12,4 +12,12 @@
 	box-shadow: -1rem 0 3rem #000;
 
 	transition: .2s;
+}
+
+.card h2:hover {
+	background: linear-gradient(90deg,#ff8a00,#e52e71);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	/* font-weight: 500px; */
 }
