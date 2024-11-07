@@ -23,7 +23,8 @@
 			"logo"
 			"nav"
 			"main1"
-			"main2";
+			"main2"
+			"projectsAndSkills";
 			font-family: 'jetBrainsMono';
 	}
 }
@@ -50,6 +51,7 @@ nav {
 
 #projectsAndSkills {
 	grid-area: projectsAndSkills;
+	text-align: center;
 	background-color: blueviolet;
 }
 
