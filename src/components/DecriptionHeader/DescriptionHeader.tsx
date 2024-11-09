@@ -8,14 +8,14 @@ import styles from "./DescriptionHeader.module.css";
 
 const DescriptionHeader = () => {
 		const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		const jobs = ["front end web designer", "free lancer", "Consultant", "Engineer"];
+		const jobs = ["front end designer", "free lancer", "Consultant", "Engineer"];
 		const [innerDisplayJob, setInnerDisplayJob] = useState("");
 		const [index, setIndex] = useState(0);
 
 		const [nbIterationPerLetter, setNbIterationPerLetter] = useState(0);
 		
 		useEffect(() => {
-			// console.log(`rendered with initial word: ${jobs[index]}, nbIterationPerLetter: ${nbIterationPerLetter}`);
+			console.log(`rendered with initial word: ${jobs[index]}, nbIterationPerLetter: ${nbIterationPerLetter}`);
 			const interval = setInterval(()=> {
 				var initialWord = jobs[index];
 				// generate a random string sequence to display
@@ -36,11 +36,12 @@ const DescriptionHeader = () => {
 					setNbIterationPerLetter( nbIterationPerLetter + 1/4);
 					// set the state of the field to display to rerender the component each time the whole word is computed
 					setInnerDisplayJob(randomIteratedDisplay);
-					// console.log(`back to initial word ${(randomIteratedDisplay === initialWord)} ${nbIterationPerLetter}`);
+					console.log(`back to initial word ${(randomIteratedDisplay === initialWord)} ${nbIterationPerLetter}`);
 					// on the last iteration, set a time out to change the initial word and reset the random iteration cycle
-					if (nbIterationPerLetter === initialWord.length -1 + 1/4) {
+					/** Careful, here nbIterationPerLetter has not been iterated yet because the rerender is not done yet, that is why we account for the expected future value in the condition*/
+					if (nbIterationPerLetter + 1/4 === initialWord.length -1 + 1/4) {
 						let timeOut = setTimeout(() => {
-							// console.log(`back to initial word, index need to be changed to rerender again with a new initial word`);
+							console.log(`back to initial word, index need to be changed to rerender again with a new initial word`);
 							// back to initial word, index need to be changed to rerender again with a new initial word, and reset interanl variable
 							setNbIterationPerLetter(0);
 							setIndex((index + 1) % jobs.length);
