@@ -10,7 +10,7 @@ import CardList from './components/CardList/CardList'
 function App() {
 
   return (
-  <div className='app-container'>
+ 	 <div className='app-container'>
 		<div id='logo'>
 			<Logo></Logo>
 		</div>

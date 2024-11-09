@@ -1,9 +1,12 @@
 /* site for shdes of gray: https://www.color-meanings.com/shades-of-gray-color-names-html-hex-rgb-codes/ */
 /* for hacking green: https://brand.hackernoon.com/visual-assets/color-palettes */
 /* Chosen gray: #charcoal: 36454F */
+
+/* If the grid area is in the html, it has to be selected and appear in the grid-template-area */
+
 .app-container {
 	display: grid;
-	height: 100vh;
+	height: 95vh;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 0.06fr 1fr 1fr;
 	grid-template-areas: 
@@ -12,21 +15,6 @@
 		"projectsAndSkills projectsAndSkills projectsAndSkills projectsAndSkills";
 	font-family: 'jetBrainsMono';
 	color: whitesmoke;
-}
-
-@media (max-width: 600px) {
-	.app-container {
-	display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: 0.05fr 0.06fr 1fr 1fr;
-		grid-template-areas: 
-			"logo"
-			"nav"
-			"main1"
-			"main2"
-			"projectsAndSkills";
-			font-family: 'jetBrainsMono';
-	}
 }
 
 nav {
@@ -53,6 +41,25 @@ nav {
 	grid-area: projectsAndSkills;
 	text-align: center;
 	background-color: blueviolet;
+}
+
+@media (max-width: 600px) {
+	.app-container {
+	display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 0.05fr 0.06fr 1fr 1fr;
+		grid-template-areas: 
+			"logo"
+			"nav"
+			"main1"
+			"main2"
+			"projectsAndSkills";
+			font-family: 'jetBrainsMono';
+	}
+
+	#main2 {
+		display: none;
+	}
 }
 
 @font-face {
