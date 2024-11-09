@@ -4,7 +4,7 @@ const CardContainer = () => {
 	return (
 		<article className={styles.card}>
 		<header>
-			<p>Maybe an little icon</p>
+			<p>List of used technologies</p>
 			<h2>Title of the project</h2>
 		</header>
 		<div>

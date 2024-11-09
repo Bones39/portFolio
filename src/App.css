@@ -40,7 +40,8 @@ nav {
 #projectsAndSkills {
 	grid-area: projectsAndSkills;
 	text-align: center;
-	background-color: blueviolet;
+	background-color: #36454F;
+	/* background-color: blueviolet; */
 }
 
 @media (max-width: 600px) {
