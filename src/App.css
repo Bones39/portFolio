@@ -46,15 +46,15 @@ nav {
 @media (max-width: 600px) {
 	.app-container {
 	display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: 0.05fr 0.06fr 1fr 1fr;
-		grid-template-areas: 
-			"logo"
-			"nav"
-			"main1"
-			"main2"
-			"projectsAndSkills";
-			font-family: 'jetBrainsMono';
+	grid-template-columns: 1fr;
+	grid-template-rows: 0.05fr 0.06fr 1fr 1fr;
+	grid-template-areas: 
+		"logo"
+		"nav"
+		"main1"
+		"main2"
+		"projectsAndSkills";
+		font-family: 'jetBrainsMono';
 	}
 
 	#main2 {

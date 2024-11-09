@@ -14,10 +14,14 @@
 	transition: .2s;
 }
 
-.card h2:hover {
+.card:hover h2 {
 	background: linear-gradient(90deg,#ff8a00,#e52e71);
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	/* font-weight: 500px; */
+}
+
+.card:hover {
+	transform: translateY(-1rem);
 }
