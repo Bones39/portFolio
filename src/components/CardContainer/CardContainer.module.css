@@ -10,6 +10,7 @@
 	border-radius: 16px;
 	background:  #17141d;
 	box-shadow: -1rem 0 3rem #000;
+	cursor: pointer;
 
 	transition: .2s;
 }
@@ -19,7 +20,6 @@
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	/* font-weight: 500px; */
 }
 
 .card:hover {

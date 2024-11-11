@@ -3,3 +3,7 @@ body {
 	margin: 0;
 	background-color: var(--blue);
 }
+
+body.active-modal {
+    overflow-y: hidden;
+}
