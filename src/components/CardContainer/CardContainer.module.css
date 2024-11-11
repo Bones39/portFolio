@@ -25,3 +25,9 @@
 .card:hover {
 	transform: translateY(-1rem);
 }
+
+
+.description {
+	font-size: 0.8em;
+	height: 150px;
+}

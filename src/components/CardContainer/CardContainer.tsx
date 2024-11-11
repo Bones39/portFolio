@@ -1,14 +1,18 @@
 import styles from "./CardContainer.module.css";
 
-const CardContainer = () => {
+interface props {
+	title: string;
+	description: string;
+}
+
+const CardContainer = ({ title, description }: props) => {
 	return (
-		<article className={styles.card}>
+	<article className={styles.card}>
 		<header>
-			<p>List of used technologies</p>
-			<h2>Title of the project</h2>
+			{<h2>{title}</h2>}
 		</header>
-		<div>
-			Here goes a description of the project
+		<div className={styles.description}>
+			{description}
 		</div>
 		<div>
 			Here the list of used technologies
