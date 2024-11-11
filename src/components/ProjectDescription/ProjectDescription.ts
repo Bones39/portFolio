@@ -2,11 +2,11 @@ const projectsDescription = {
     gameOfLife: {
         title: "Game of life",
         usedTechnologies: [],
-        description: "You do not really get to play it. Just define the initial configuration and amaze yourself one how simple rules can result in very complexe phenomenom."
+        description: "You do not really get to play it. Just define the initial configuration and amaze yourself one how simple rules can result in very complex phenomenon."
     },
 
     jellyCar: {
-        title: "Ver classic plateform game",
+        title: "Very classic plateform game",
         usedTechnologies: [],
         description: "This one you can play! A very classic 2D platform game. Help the little jelly ball to survive: guide it to a safe place without getting crushed!"
     },

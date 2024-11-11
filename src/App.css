@@ -1,8 +1,15 @@
 /* site for shdes of gray: https://www.color-meanings.com/shades-of-gray-color-names-html-hex-rgb-codes/ */
 /* for hacking green: https://brand.hackernoon.com/visual-assets/color-palettes */
+/* color palette: https://colorhunt.co/palettes/black */
 /* Chosen gray: #charcoal: 36454F */
 
 /* If the grid area is in the html, it has to be selected and appear in the grid-template-area */
+
+/* Global variable */
+:root {
+	--blue: #26355D;
+	--charcoal: #36454F;
+  }
 
 .app-container {
 	display: grid;
@@ -19,28 +26,34 @@
 
 nav {
 	grid-area: nav;
-	background-color: #36454F;
+	/* background-color: #36454F; */
+	background-color: var(--blue);
 }
 
 #logo {
 	grid-area: logo; 
-	background-color: #36454F;
+	/* background-color: #36454F; */
+	background-color: var(--blue);
 }
 
 #main1 {
 	grid-area: main1;
-	background-color: #36454F;
+	/* background-color: #36454F; */
+	background-color: var(--blue);
 }
 
 #main2 {
 	grid-area: main2;
-	background-color: #36454F;
+	/* background-color: #36454F; */
+	background-color: var(--blue);
+
 }
 
 #projectsAndSkills {
 	grid-area: projectsAndSkills;
 	text-align: center;
-	background-color: #36454F;
+	/* background-color: #36454F; */
+	background-color: var(--blue);
 	/* background-color: blueviolet; */
 }
 
