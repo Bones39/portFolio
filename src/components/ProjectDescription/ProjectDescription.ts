@@ -13,7 +13,7 @@ const projectsDescription = {
 
     gameHub: {
         title: "Game Hub",
-        usedTechnologies: [],
+        usedTechnologies: ["react", "bootstrap"],
         description: "Are you searching for a particulare game? Here you can easily search for any game: filter them by genre, plateform (PC, Xbox, etc), released date,..."
     }
 }

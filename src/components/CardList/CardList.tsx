@@ -9,9 +9,9 @@ https://www.youtube.com/watch?v=wsTv9y931o8
 const CardList = () => {
 	return (
 		<section className={styles.cardList}>
-			<CardContainer title={projectsDescription.gameOfLife.title} description={projectsDescription.gameOfLife.description}></CardContainer>
-			<CardContainer title={projectsDescription.jellyCar.title} description={projectsDescription.jellyCar.description}></CardContainer>
-			<CardContainer title={projectsDescription.gameHub.title} description={projectsDescription.gameHub.description}></CardContainer>
+			<CardContainer title={projectsDescription.gameOfLife.title} description={projectsDescription.gameOfLife.description} usedTechnologies={projectsDescription.gameOfLife.usedTechnologies}></CardContainer>
+			<CardContainer title={projectsDescription.jellyCar.title} description={projectsDescription.jellyCar.description} usedTechnologies={projectsDescription.jellyCar.usedTechnologies}></CardContainer>
+			<CardContainer title={projectsDescription.gameHub.title} description={projectsDescription.gameHub.description} usedTechnologies={projectsDescription.gameHub.usedTechnologies}></CardContainer>
 		</section>
 	)
 }

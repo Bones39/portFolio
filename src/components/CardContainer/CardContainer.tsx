@@ -3,15 +3,17 @@ import styles from "./CardContainer.module.css";
 import Modal from "../Modal/Modal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faTwitter, faFontAwesome, faReact } from '@fortawesome/free-brands-svg-icons'
+import { faTwitter, faFontAwesome, faReact, faBootstrap } from '@fortawesome/free-brands-svg-icons'
+import IconTags from "../IconTags/IconTags";
 // import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 interface props {
 	title: string;
 	description: string;
+	usedTechnologies: string[];
 }
 
-const CardContainer = ({ title, description }: props) => {
+const CardContainer = ({ title, description, usedTechnologies }: props) => {
 
 	const [modal, setModal] = useState(false);
 
@@ -29,9 +31,14 @@ const CardContainer = ({ title, description }: props) => {
 					{description}
 				</div>
 				<div className={styles.iconTag}>
-					<FontAwesomeIcon icon={faReact}/>
-					React
+					<i className={styles.icon}>
+						<FontAwesomeIcon icon={faReact}/>
+					</i>
+					<span className={styles.iconName}>
+						React
+					</span>
 				</div>
+				<IconTags iconNames={usedTechnologies}></IconTags>
 			</article>
 
 			{modal && (<Modal modal={modal} toggleModal={toggleModal}></Modal>)}
