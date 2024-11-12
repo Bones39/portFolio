@@ -1,6 +1,10 @@
 import { useState } from "react";
 import styles from "./CardContainer.module.css";
 import Modal from "../Modal/Modal";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faTwitter, faFontAwesome, faReact } from '@fortawesome/free-brands-svg-icons'
+// import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 interface props {
 	title: string;
@@ -24,8 +28,9 @@ const CardContainer = ({ title, description }: props) => {
 				<div className={styles.description}>
 					{description}
 				</div>
-				<div>
-					Here the list of used technologies
+				<div className={styles.iconTag}>
+					<FontAwesomeIcon icon={faReact}/>
+					React
 				</div>
 			</article>
 

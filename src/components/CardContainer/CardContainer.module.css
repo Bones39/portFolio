@@ -31,3 +31,12 @@
 	font-size: 0.8em;
 	height: 150px;
 }
+
+.iconTag {
+	/* display: flex; */
+	width: fit-content;
+	padding: 0.2em 0.4em;
+	background-color: aqua;
+	font-size: 0.8em;
+	border-radius: 0.6em;
+}
