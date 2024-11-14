@@ -30,14 +30,6 @@ const CardContainer = ({ title, description, usedTechnologies }: props) => {
 				<div className={styles.description}>
 					{description}
 				</div>
-				<div className={styles.iconTag}>
-					<i className={styles.icon}>
-						<FontAwesomeIcon icon={faReact}/>
-					</i>
-					<span className={styles.iconName}>
-						React
-					</span>
-				</div>
 				<IconTags iconNames={usedTechnologies}></IconTags>
 			</article>
 

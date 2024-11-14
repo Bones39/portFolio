@@ -31,23 +31,3 @@
 	font-size: 0.8em;
 	height: 150px;
 }
-
-/* To be put in a different component */
-
-.iconTag {
-	/* display: flex; */
-	width: fit-content;
-	padding: 0.2em 0.4em;
-	background-color: aqua;
-	border-radius: 0.7em;
-	color: black;
-}
-
-.icon {
-	font-size: 0.9em;
-}
-
-.iconName {
-	padding-left: 0.3em;
-	font-size: 0.8em;
-}
