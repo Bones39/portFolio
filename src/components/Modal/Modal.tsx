@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import styles from "./Modal.module.css";
+import ReactDOM from "react-dom";
 
 /* create a modal component: https://www.youtube.com/watch?v=9DwGahSqcEc */
 
@@ -8,7 +8,7 @@ interface Props {
     toggleModal: () => void;
 }
 
-export default function Modal({modal, toggleModal}: Props) {
+const Modal = ({modal, toggleModal}: Props) => {
 
   if(modal) {
     document.body.classList.add('active-modal')
@@ -16,9 +16,9 @@ export default function Modal({modal, toggleModal}: Props) {
     document.body.classList.remove('active-modal')
   }
 
-  return (
+  return ReactDOM.createPortal(
     <>
-      <div className={styles.modal}>
+      {<div className={styles.modal}>
           <div onClick={toggleModal} className={styles.overlay}></div>
           <div className={styles["modal-content"]}>
             <h2>Hello Modal</h2>
@@ -34,7 +34,10 @@ export default function Modal({modal, toggleModal}: Props) {
               CLOSE
             </button>
           </div>
-        </div>
-    </>
+        </div>}
+    </>, document.getElementById("portal") || document.body
+
   );
 }
+
+export default Modal;
