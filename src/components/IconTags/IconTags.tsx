@@ -36,7 +36,7 @@ const IconTags = ({iconNames}: Props) => {
 		<div className={styles.tagContainer}>
 			{iconNames.map((icon) => {
 				return(
-				<div className={styles.iconTag}>
+				<div className={styles.iconTag} key={icon}>
 					<i className={styles.icon}>
 						{iconMap.hasOwnProperty(icon) ? <FontAwesomeIcon icon={iconMap[icon]}/> : iconMapReactIcon[icon]}
 					</i>
