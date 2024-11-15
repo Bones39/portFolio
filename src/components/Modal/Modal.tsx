@@ -19,7 +19,7 @@ const Modal = ({modal, toggleModal}: Props) => {
   return ReactDOM.createPortal(
     <>
       {<div className={styles.modal}>
-          <div onClick={toggleModal} className={styles.overlay}></div>
+          <div onClick={()=>toggleModal()} className={styles.overlay}></div>
           <div className={styles["modal-content"]}>
             <h2>Hello Modal</h2>
             <p>
@@ -30,7 +30,7 @@ const Modal = ({modal, toggleModal}: Props) => {
               quaerat ipsum quos molestiae rem aspernatur dicta tenetur. Sunt
               placeat tempora vitae enim incidunt porro fuga ea.
             </p>
-            <button className={styles["close-modal"]} onClick={toggleModal}>
+            <button className={styles["close-modal"]} onClick={()=>toggleModal()}>
               CLOSE
             </button>
           </div>

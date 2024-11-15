@@ -57,7 +57,13 @@ nav {
 	/* background-color: blueviolet; */
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 970px) {
+	#main2 {
+		display: none;
+	}
+} */
+
+@media (max-width: 970px) {
 	.app-container {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -70,7 +76,6 @@ nav {
 		"projectsAndSkills";
 		font-family: 'jetBrainsMono';
 	}
-
 	#main2 {
 		display: none;
 	}
