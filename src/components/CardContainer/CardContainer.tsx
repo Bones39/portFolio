@@ -6,6 +6,8 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faFontAwesome, faReact, faBootstrap } from '@fortawesome/free-brands-svg-icons'
 import IconTags from "../IconTags/IconTags";
 import Modal2 from "../Modal/Modal2";
+import GameOfLife from '../GameOfLife/GameOfLife';
+import GameOfLife2 from "../GameOfLife/GameOfLife2";
 // import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 interface props {
@@ -35,6 +37,7 @@ const CardContainer = ({ title, description, usedTechnologies }: props) => {
 			</article>
 			<Modal2 open={isOpen} onClose={() => setIsOpen(false)}>
 				fancy modal
+				<GameOfLife2/>
 			</Modal2>
 		</>
 	)
