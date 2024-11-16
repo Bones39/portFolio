@@ -1,7 +1,12 @@
 .modal {
-	/* keep a ratio of 16:9 - only the width is to be changed */
+	/* keep a ratio of 16:9 - the more constraining value btw height and width will define the size of the modal */
+	/* Calculate the case where width is constraining */
 	--marginW: 15vw;
-	--marginH: calc(var(--marginW) * 9 / 16);
+	--marginH2: calc(var(--marginW) * 9 / 16); /** 100vh - mH = 9/16 * (100vh - mW) => mH = 100vH - 9/16* (100vW  mW) */
+	--marginH: calc(100vh - 9/16*(100vw - var(--marginW)));
+	/* hard set the max dimension of the modal, keep the 16:9 ratio */
+	--maxWidth: 1440px;
+	--maxHeight: 813px;
 	/* Move the modal relative to the top left corner */
 	position: fixed;
 	top: calc(var(--marginH) / 2);
@@ -10,5 +15,17 @@
 	width: calc(100vw - var(--marginW));
 	height: calc(100vh - var(--marginH));
 	/* Move it from 50% of its height and width so it is center*/
+	max-width: 1440px;
+	max-height: 813px;
 	background-color: aliceblue;
+}
+
+
+@media (max-width: 2540px) {
+	.modal {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 }
