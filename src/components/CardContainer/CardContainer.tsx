@@ -25,7 +25,7 @@ const CardContainer = ({ title, description, usedTechnologies }: props) => {
 
 	return (
 		<>
-			<article className={styles.card}>
+			<article className={styles.card} onClick={() => setIsOpen(true)}>
 				<header>
 					{<h2 onClick={() => setIsOpen(true)}>{title}</h2>}
 				</header>
@@ -33,12 +33,10 @@ const CardContainer = ({ title, description, usedTechnologies }: props) => {
 					{description}
 				</div>
 				<IconTags iconNames={usedTechnologies}></IconTags>
-				<Modal2 open={isOpen} onClose={() => setIsOpen(false)}>
-					fancy modal
-				</Modal2>
 			</article>
-
-			{/* {modal && (<Modal modal={modal} toggleModal={toggleModal}></Modal>)} */}
+			<Modal2 open={isOpen} onClose={() => setIsOpen(false)}>
+				fancy modal
+			</Modal2>
 		</>
 	)
 }
