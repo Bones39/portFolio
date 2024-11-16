@@ -16,7 +16,6 @@ interface props {
 
 const CardContainer = ({ title, description, usedTechnologies }: props) => {
 
-	const [modal, setModal] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
 
 /* 	const toggleModal = () => {

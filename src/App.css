@@ -9,6 +9,9 @@
 :root {
 	--blue: #26355D;
 	--charcoal: #36454F;
+	--green: rgb(57, 226, 45);
+	--orange: #ff8a00;
+	--red: #e52e71;
   }
 
 .app-container {

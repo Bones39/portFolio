@@ -17,7 +17,6 @@ const Modal2 = ({children, open, onClose}: Props) => {
 		window.addEventListener('keydown', 
 			(event) => {
 				if (open && event.key === 'Escape') {
-					console.log(event.key);
 					onClose();
 				}
 			}
