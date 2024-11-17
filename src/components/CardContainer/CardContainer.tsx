@@ -8,6 +8,7 @@ import IconTags from "../IconTags/IconTags";
 import Modal2 from "../Modal/Modal2";
 import GameOfLife from '../GameOfLife/GameOfLife';
 import GameOfLife2 from "../GameOfLife/GameOfLife2";
+import ZoomableContent from "../GameOfLife/ZoomableContent";
 // import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 interface props {
@@ -36,8 +37,8 @@ const CardContainer = ({ title, description, usedTechnologies }: props) => {
 				<IconTags iconNames={usedTechnologies}></IconTags>
 			</article>
 			<Modal2 open={isOpen} onClose={() => setIsOpen(false)}>
-				fancy modal
 				<GameOfLife2/>
+				{/* <ZoomableContent/> */}
 			</Modal2>
 		</>
 	)
