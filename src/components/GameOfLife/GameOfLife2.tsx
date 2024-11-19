@@ -7,8 +7,8 @@ import { calc } from '@chakra-ui/react';
 
 type CellState = boolean;
 
-const numRows = 10;
-const numCols = 10;
+const numRows = 50;
+const numCols = 120;
 
 // Neighbor positions relative to a cell
 const neighborPositions = [
@@ -33,8 +33,7 @@ const GRID_CONTAINER_STYLES: React.CSSProperties = {
 	/* marginTop: '50px',
 	marginLeft: '50px', */ /* `${((document.getElementsByClassName('modal-content')[0]?.clientWidth - (document.getElementById("gridContainer")?.clientWidth || 400) ) / 2).toString()}px` */
 	border: 'solid 1.5px blue',
-	width: 'fit-content',
-	justifyContent: 'center'
+	width: 'fit-content'
 }
 
 const MAIN_CONTAINER: React.CSSProperties = {

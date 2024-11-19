@@ -1,15 +1,16 @@
 /* Zoomable.css */
 .main-container {
-	width: 95%;			/** relative to the parent container */
+	width: 90%;			/** relative to the parent container */
 	height: 85%;		/** relative to the parent container */
 	max-height: 100%;
 	overflow: hidden;
 	position: relative;
-	cursor: grab;
+	/* cursor: grab; */
 	margin: auto		/** To center the grid */
 }
 
 .zoomable-container {
+	/** use flexbox to center the grid (which will be a flex item) */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
