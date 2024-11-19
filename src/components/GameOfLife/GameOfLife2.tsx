@@ -8,7 +8,7 @@ import { calc } from '@chakra-ui/react';
 type CellState = boolean;
 
 const numRows = 10;
-const numCols = 50;
+const numCols = 10;
 
 // Neighbor positions relative to a cell
 const neighborPositions = [
@@ -30,8 +30,11 @@ const cellSize = 10;
 const GRID_CONTAINER_STYLES: React.CSSProperties = {
 	display: 'grid',
 	gridTemplateColumns: `repeat(${numCols}, ${cellSize}px)`,
-	marginTop: '20px',
-	marginLeft: '50px', /* `${((document.getElementsByClassName('modal-content')[0]?.clientWidth - (document.getElementById("gridContainer")?.clientWidth || 400) ) / 2).toString()}px` */
+	/* marginTop: '50px',
+	marginLeft: '50px', */ /* `${((document.getElementsByClassName('modal-content')[0]?.clientWidth - (document.getElementById("gridContainer")?.clientWidth || 400) ) / 2).toString()}px` */
+	border: 'solid 1.5px blue',
+	width: 'fit-content',
+	justifyContent: 'center'
 }
 
 const MAIN_CONTAINER: React.CSSProperties = {
@@ -82,7 +85,7 @@ const GameOfLife2: React.FC = () => {
   	}, []);
 
   return (
-    <div style={MAIN_CONTAINER}>
+    <div style={MAIN_CONTAINER} className='main-container'>
 		<h1>Conway's Game of Life</h1>
 		<div>
 			<button
@@ -114,28 +117,30 @@ const GameOfLife2: React.FC = () => {
 				Random
 			</button>
 		</div>
-		<div style={GRID_CONTAINER_STYLES} className='zoomable-content' id="gridContainer">
-			{grid.map((row, rowIndex) =>
-				row.map((cell, colIndex) => (
-				<div
-					key={`${rowIndex}-${colIndex}`}
-					onClick={() => {
-						const newGrid = grid.map((row, i) =>
-							row.map((cell, j) =>
-							i === rowIndex && j === colIndex ? !cell : cell // if hte current cell is clicked, switch the state, othws keep current state
-							)
-						);
-						setGrid(newGrid);
-					}}
-					style={{
-						width: cellSize,
-						height: cellSize,
-						backgroundColor: cell ? 'black' : 'white',
-						border: 'solid 1px #ccc',
-					}}
-				/>
-				))
-			)}
+		<div className='zoomable-container'>
+			<div style={GRID_CONTAINER_STYLES} /* className='zoomable-content' */ id="gridContainer">
+				{grid.map((row, rowIndex) =>
+					row.map((cell, colIndex) => (
+					<div
+						key={`${rowIndex}-${colIndex}`}
+						onClick={() => {
+							const newGrid = grid.map((row, i) =>
+								row.map((cell, j) =>
+								i === rowIndex && j === colIndex ? !cell : cell // if hte current cell is clicked, switch the state, othws keep current state
+								)
+							);
+							setGrid(newGrid);
+						}}
+						style={{
+							width: cellSize,
+							height: cellSize,
+							backgroundColor: cell ? 'black' : 'white',
+							border: 'solid 1px #ccc',
+						}}
+					/>
+					))
+				)}
+			</div>
 		</div>
     </div>
   );
