@@ -2,7 +2,7 @@ const projectsDescription = {
     gameOfLife: {
         title: "Game of life",
         usedTechnologies: ["Javascript"],
-        description: "You do not really get to play it. Just define the initial configuration and amaze yourself one how simple rules can result in very complex phenomenon."
+        description: "You do not really get to play it. Just define the initial configuration and amaze yourself on how simple rules can result in very complex phenomenon."
     },
 
     jellyCar: {

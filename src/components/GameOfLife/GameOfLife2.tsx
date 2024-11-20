@@ -158,7 +158,7 @@ const handleWheel = (event: React.WheelEvent) => {
 				gridTemplateColumns: `repeat(${numCols}, ${cellSize}px)`,
 				/* marginTop: '50px',
 				marginLeft: '50px', */ /* `${((document.getElementsByClassName('modal-content')[0]?.clientWidth - (document.getElementById("gridContainer")?.clientWidth || 400) ) / 2).toString()}px` */
-				border: 'solid 1.5px blue',
+				border: 'solid 1.5px green',
 				width: 'fit-content',
 				transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
 				transformOrigin: `center center`
