@@ -30,6 +30,10 @@
 	background-color: aliceblue;
 }
 
+button {
+	align-self: flex-end;
+	margin: 10px;
+}
 
 @media (max-width: 2540px) {
 	.modal {
