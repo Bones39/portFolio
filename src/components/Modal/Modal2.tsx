@@ -9,9 +9,10 @@ interface Props {
 	children: ReactNode;
 	open: boolean;
 	onClose: () => void;
+	title: string;
 }
 
-const Modal2 = ({children, open, onClose}: Props) => {
+const Modal2 = ({children, open, onClose, title}: Props) => {
 	/* Implement the Escape key to close the modal if open */
 	useEffect(() => {
 		window.addEventListener('keydown', 
@@ -33,7 +34,7 @@ const Modal2 = ({children, open, onClose}: Props) => {
 			<div className={styles.overlay} onClick={onClose}> </div>
 			<div className={styles.modal}>
 				<button onClick={onClose}>Close</button>
-				<p>fancy modal</p>
+				<p>{title}</p>
 				{/* create an composant here to display the header */}
 				{/* <h1>Conway's Game of Life</h1>
 				<div>

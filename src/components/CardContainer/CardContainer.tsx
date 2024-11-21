@@ -37,7 +37,7 @@ const CardContainer = ({ title, description, usedTechnologies }: props) => {
 				</div>
 				<IconTags iconNames={usedTechnologies}></IconTags>
 			</article>
-			<Modal2 open={isOpen} onClose={() => setIsOpen(false)}>
+			<Modal2 open={isOpen} onClose={() => setIsOpen(false)} title={title}>
 				{/* <GameOfLife2/> */}
 				{/* <ZoomableContent/> */}
 				<FlexModal></FlexModal>
