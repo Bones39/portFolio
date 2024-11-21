@@ -8,6 +8,8 @@
 }
 
 .modal {
+	display: flex;
+	flex-direction: column;
 	/* keep a ratio of 16:9 - the more constraining value btw height and width will define the size of the modal */
 	--marginW: 15vw;
 	--marginH2: calc(var(--marginW) * 9 / 16); /** 100vh - mH = 9/16 * (100vh - mW) => mH = 100vH - 9/16* (100vW  mW) */
@@ -19,7 +21,7 @@
 	position: fixed;
 	top: calc(var(--marginH) / 2);
 	left: calc(var(--marginW) / 2);
-	/* set the height and width to always be 16:9 ration */
+	/* set the height and width to always be 16:9 ratio */
 	width: calc(100vw - var(--marginW));
 	height: calc(100vh - var(--marginH));
 	/* Move it from 50% of its height and width so it is center*/
