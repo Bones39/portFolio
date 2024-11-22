@@ -13,11 +13,33 @@
 }
 
 #controlBox {
+	/** parent: .flexWindowsContainer*/
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	background-color: #0071FF;
 	width: 20%;
+	gap:1%;
 }
 
 #screenBox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background-color: #3fe60c;
 	width: 80%;
+}
+
+.zoomableContainer {
+	/** parent: #screenBox*/
+	background-color: antiquewhite;
+	width: 98%;
+	height: 98%;
+}
+
+.controlButtonPane {
+	/** parent: #controlBox*/
+	background-color: rgb(235, 189, 134);
+	width: 98%;
+	height: 15%;
 }
