@@ -87,7 +87,7 @@ const FlexModal = () => {
 										width: cellSize,
 										height: cellSize,
 										backgroundColor: cell ? 'black' : 'white',
-										// border: 'solid 1px #ccc',
+										border: 'solid 1px #ccc',
 									}}
 								/>
 							))
