@@ -32,6 +32,7 @@
 
 .zoomableContainer {
 	/** parent: #screenBox*/
+	position: relative;
 	background-color: antiquewhite;
 	width: 98%;
 	height: 98%;
@@ -42,4 +43,15 @@
 	background-color: rgb(235, 189, 134);
 	width: 98%;
 	height: 15%;
+}
+
+#counter {
+	/** parent: screenBox, will be on the top right corner relativly to it*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 7%;
+	height: 7%;
+	background-color: rgb(238, 104, 104);
+	z-index: 1000;
 }

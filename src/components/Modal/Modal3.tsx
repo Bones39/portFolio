@@ -6,9 +6,13 @@ const FlexModal = () => {
 			<div id="controlBox" className="box">
 				<div className="controlButtonPane"></div>
 				<div className="controlButtonPane"></div>
+				<div className="controlButtonPane"></div>
+				<div className="controlButtonPane"></div>
 			</div>
 			<div id="screenBox" className="box">
-				<div className="zoomableContainer"></div>
+				<div className="zoomableContainer">
+					<div id="counter"></div>
+				</div>
 			</div>
 		</div>
 	)
