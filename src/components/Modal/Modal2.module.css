@@ -12,7 +12,7 @@
 	flex-direction: column;
 	/* keep a ratio of 16:9 - the more constraining value btw height and width will define the size of the modal */
 	--marginW: 15vw;
-	--marginH2: calc(var(--marginW) * 9 / 16); /** 100vh - mH = 9/16 * (100vh - mW) => mH = 100vH - 9/16* (100vW  mW) */
+	--marginH2: calc(var(--marginW) * 9 / 16); /** 100vh - mH = 9/16 * (100vw - mW) => mH = 100vH - 9/16* (100vW - mW) */
 	--marginH: calc(100vh - 9/16*(100vw - var(--marginW)));
 	/* hard set the max dimension of the modal, keep the 16:9 ratio */
 	--maxWidth: 1440px;
@@ -23,10 +23,10 @@
 	left: calc(var(--marginW) / 2);
 	/* set the height and width to always be 16:9 ratio */
 	width: calc(100vw - var(--marginW));
-	height: calc(100vh - var(--marginH));
+	height: 800px; /*  calc(100vh - var(--marginH)); */
 	/* Move it from 50% of its height and width so it is center*/
-	max-width: 1440px;
-	max-height: 813px;
+	/* max-width: 1440px;
+	max-height: 813px; */
 	background-color: aliceblue;
 }
 
