@@ -9,7 +9,7 @@
 }
 
 .box {
-	height: 50%; /** define height of the box inside flexWindowsContainer */
+	height: 100%; /** define height of the box inside flexWindowsContainer */
 }
 
 #controlBox {
@@ -33,11 +33,11 @@
 
 .zoomableContainer {
 	/** parent: #screenBox*/
-	/* display: flex;
-	flex-direction: column;
+	display: flex;
+	/* flex-direction: column; */
 	justify-content: center;
-	align-items: center; */
-	position: relative;
+	align-items: center;
+	position: relative;  /** needed to absolutly place the counter element*/
 	overflow: hidden;
 	overflow-y: hidden;
 	background-color: antiquewhite;

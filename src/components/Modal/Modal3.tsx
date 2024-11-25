@@ -3,8 +3,8 @@ import "./FlexModal.css"
 
 type CellState = boolean;
 
-const numRows = 10;
-const numCols = 10;
+const numRows = 50;
+const numCols = 70;
 const cellSize = 10;
 
 // Generate an empty grid
@@ -48,13 +48,11 @@ const FlexModal = () => {
 	};
 
 	const STYLES_ZOOMABLE_CONTENT = {
-		/* display: 'grid',
+		display: 'grid',
 		width: 'fit-content',
-		gridTemplateColumns: `repeat(${numCols}, ${cellSize}px)`, */
+		gridTemplateColumns: `repeat(${numCols}, ${cellSize}px)`,
 		transform: `translate(${position.x}px, ${position.y}px)`,
-		border: `solid 1px blue`,
-		width: `1800px`,
-		height: `800px`
+		border: `solid 1px blue`
 	}
 
 	return (
@@ -73,7 +71,7 @@ const FlexModal = () => {
 				onMouseLeave={handleMouseUp}>
 					<div id="counter"></div>
 					<div style={STYLES_ZOOMABLE_CONTENT}>
-						{/* {grid.map((row, rowIndex) =>
+						{grid.map((row, rowIndex) =>
 							row.map((cell, colIndex) => (
 								<div
 									key={`${rowIndex}-${colIndex}`}
@@ -88,13 +86,13 @@ const FlexModal = () => {
 									style={{
 										width: cellSize,
 										height: cellSize,
-										backgroundColor: cell ? 'black' : 'white',
+										backgroundColor: cell ? 'black' : rowIndex === Math.floor(numRows/2) && colIndex === Math.floor(numCols/2)? 'lightblue' :'white',
 										border: 'solid 1px #ccc',
 									}}
 								/>
 							))
-						)} */}
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum illo nobis, dignissimos aut maxime sint eos, non, possimus dolores ad obcaecati omnis libero? Fugit voluptas nisi alias maxime quo, omnis voluptatum id at ipsa molestiae cupiditate odio! Ipsa amet odio architecto modi nobis et quo similique delectus quae ullam?
+						)}
+						{/* Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nostrum illo nobis, dignissimos aut maxime sint eos, non, possimus dolores ad obcaecati omnis libero? Fugit voluptas nisi alias maxime quo, omnis voluptatum id at ipsa molestiae cupiditate odio! Ipsa amet odio architecto modi nobis et quo similique delectus quae ullam? */}
 					</div>
 				</div>
 			</div>
