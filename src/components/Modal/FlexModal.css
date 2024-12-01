@@ -47,7 +47,7 @@
 }
 
 .zoomableContainer:active {
-	cursor: grabbing;
+	/* cursor: grabbing; */
 	user-select: none;
 }
 
@@ -56,6 +56,10 @@
 	background-color: rgb(235, 189, 134);
 	width: 98%;
 	height: 15%;
+}
+
+.active {
+	cursor: grabbing;
 }
 
 #counter {

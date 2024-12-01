@@ -39,11 +39,14 @@ const FlexModal = () => {
 
 	// ------------------------ event handlers ---------------------
 	const handleMouseDown = (event: React.MouseEvent) => {
-		setDragging(true);
-		setOrigin({
-			x: event.clientX - position.x * scale,
-			y: event.clientY - position.y * scale,
-		});
+		if (event.button === 1) {
+			console.log("Middle click");
+			setDragging(true);
+			setOrigin({
+				x: event.clientX - position.x * scale,
+				y: event.clientY - position.y * scale,
+			});
+		}
 	};
 
 	const handleMouseMove = (event: React.MouseEvent) => {
@@ -144,8 +147,8 @@ const FlexModal = () => {
 				onMouseMove={handleMouseMove}
 				onMouseUp={handleMouseUp}
 				onMouseLeave={handleMouseUp}>
-					<div id="counter"></div>
-					<div style={STYLES_ZOOMABLE_CONTENT}>
+					<div id="counter">{"a construire"}</div>
+					<div style={STYLES_ZOOMABLE_CONTENT} className={dragging ? 'active' : ''}>
 						{grid.map((row, rowIndex) =>
 							row.map((cell, colIndex) => (
 								<div
