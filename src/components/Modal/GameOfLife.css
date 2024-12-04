@@ -1,0 +1,87 @@
+.flexWindowsContainer {
+	/** this flex grow property is related to the parent element ".modal" which is a flex element which main direction is column*/
+	flex-grow: 1;
+	/* border: solid 8px red; */
+	display: flex;
+	justify-content: space-between;
+	/* align-items: center; */
+	/* gap: 10px; */
+}
+
+.box {
+	height: 92%; /** define height of the box inside flexWindowsContainer */
+}
+
+#controlBox {
+	/** parent: .flexWindowsContainer*/
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* blue */
+	/* background-color: #0071FF; */
+	background-color: #0A5EB0;
+	width: 20%;  /** don't define height here because it is already defined in the .box selector */
+	gap:1%;
+	justify-content: center;
+	border-radius: 0.3em;
+}
+
+#screenBox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* background-color: #3fe60c; */
+	width: 80%;  /** don't define heigth here because it is already defined in the .box selector */
+	/* height: 50%; */
+}
+
+.zoomableContainer {
+	/** parent: #screenBox*/
+	display: flex;
+	/* flex-direction: column; */
+	justify-content: center;
+	align-items: center;
+	position: relative;  /** needed to absolutly place the counter element*/
+	overflow: hidden;
+	overflow-y: hidden;
+	background-color: antiquewhite;
+	/** the height of this element depends on its content (STYLES_ZOOMABLE_CONTENT) if defined in a non explicit way */
+	width: 99%;
+	height: 99%;
+}
+
+.zoomableContainer:active {
+	/* cursor: grabbing; */
+	user-select: none;
+}
+
+.controlButtonPane {
+	/** parent: #controlBox*/
+	/* display: flex; */
+	/* justify-content: center;
+	align-items: center; */
+	background-color: rgb(235, 189, 134);
+	width: 98%;
+	height: 15%;
+	border-radius: 0.3em;
+}
+
+.active {
+	cursor: grabbing;
+}
+
+#counter {
+	/** parent: zoomableContainer, will be on the top left corner relativly to it*/
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	top: 0;
+	left: 0;
+	width: 6%;
+	height: 6%;
+	background-color: rgba(238, 104, 104, 0.8);
+	border-radius: 10%;
+	z-index: 1000;
+}

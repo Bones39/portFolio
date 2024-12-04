@@ -1,0 +1,53 @@
+.overlay {
+	position: fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0,0,0,0.8);
+}
+
+.modal {
+	display: flex;
+	flex-direction: column;
+	/* keep a ratio of 16:9 - the more constraining value btw height and width will define the size of the modal */
+	--marginW: 15vw;
+	--marginH2: calc(var(--marginW) * 9 / 16); /** 100vh - mH = 9/16 * (100vw - mW) => mH = 100vH - 9/16* (100vW - mW) */
+	--marginH: calc(100vh - 9/16*(100vw - var(--marginW)));
+	/* hard set the max dimension of the modal, keep the 16:9 ratio */
+	--maxWidth: 1440px;
+	--maxHeight: 813px;
+	/* Move the modal relative to the top left corner */
+	position: fixed;
+	top: calc(var(--marginH) / 2);
+	left: calc(var(--marginW) / 2);
+	/* set the height and width to always be 16:9 ratio */
+	width: calc(100vw - var(--marginW));
+	height: calc(100vh - var(--marginH)); /*   600px;  */
+	/* Move it from 50% of its height and width so it is center*/
+	/* max-width: 1440px;
+	max-height: 813px; */
+	background-color: aliceblue;
+	border-radius: 0.3em;
+}
+
+button {
+	align-self: flex-end;
+	margin: 10px;
+}
+
+@media (max-width: 2540px) {
+	.modal {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.title {
+	/** parent is .modal */
+	font-weight: 700;
+	font-size: 2em;
+	padding-left: 50%;
+}
