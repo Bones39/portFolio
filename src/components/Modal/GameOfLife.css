@@ -20,7 +20,7 @@
 	/* blue */
 	/* background-color: #0071FF; */
 	background-color: #0A5EB0;
-	width: 20%;  /** don't define height here because it is already defined in the .box selector */
+	width: 21%;  /** if chaged, change also the width of screenBox so the sum is 100%. don't define height here because it is already defined in the .box selector */
 	gap:1%;
 	justify-content: center;
 	border-radius: 0.3em;
@@ -31,7 +31,7 @@
 	justify-content: center;
 	align-items: center;
 	/* background-color: #3fe60c; */
-	width: 80%;  /** don't define heigth here because it is already defined in the .box selector */
+	width: 79%;  /** if chaged, change also the width of controlBox so the sum is 100%. don't define heigth here because it is already defined in the .box selector */
 	/* height: 50%; */
 }
 
@@ -57,9 +57,9 @@
 
 .controlButtonPane {
 	/** parent: #controlBox*/
-	/* display: flex; */
-	/* justify-content: center;
-	align-items: center; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background-color: rgb(235, 189, 134);
 	width: 98%;
 	height: 15%;
@@ -84,4 +84,20 @@
 	background-color: rgba(238, 104, 104, 0.8);
 	border-radius: 10%;
 	z-index: 1000;
+}
+
+.gameButton {
+	/* Parent: .controlButtonPane */
+	margin: 2px;
+	background-color: #0A5EB0;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+}
+
+.gameButton:hover {
+	border: solid 1px;
+	border-color: rgb(252, 6, 6);
+	background-color: #0A5EB0;
 }

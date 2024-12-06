@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState } from "react";
 import "./GameOfLife.css"
-import { useMergeRefs } from "@chakra-ui/react";
+import { FaPlay, FaStop  } from "react-icons/fa";
 
 type CellState = boolean;
 
@@ -125,23 +125,21 @@ const GameOfLife = () => {
 		<div className="flexWindowsContainer">
 			<div id="controlBox" className="box">
 				<div className="controlButtonPane">
-					<button onClick= {() => {
+					<button className="gameButton" onClick= {() => {
 						setRunning(!running);
 						if (!running) {
 							runningRef.current = true;
 							runSimulation();
 						}
 					}}>
-						{running ? 'Stop' : 'Start'}
+						{running ? <> <FaStop /> Stop</> : <> <FaPlay/> Start</>}
 					</button>
-					<button
-						onClick={() => {
+					<button className="gameButton" onClick={() => {
 						setGrid(generateEmptyGrid());
 						}}>
 						Clear
 					</button>
-					<button
-						onClick={() => {
+					<button className="gameButton" onClick={() => {
 							const randomGrid = Array.from({ length: numRows }, () =>
 								Array.from({ length: numCols }, () => Math.random() > 0.7)
 							);
