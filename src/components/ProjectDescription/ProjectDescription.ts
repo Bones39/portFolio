@@ -15,15 +15,15 @@ const projectsDescription = {
 
     gameHub: {
         title: "Game Hub",
-        usedTechnologies: ["React", "Chackra UI", "Firebase"],
-        description: "Are you searching for a game? Here you can easily search for any game: filter them by genre, plateform (PC, Xbox, etc), released date,...",
-		url: ""
+        usedTechnologies: ["React", "Chackra UI", "Vite", "Firebase"],
+        description: "Are you searching (just searching) for a game? Here you can easily search for any game: filter them by genre, plateform (PC, Xbox, etc), released date,...",
+		url: "https://game-hub-2d1f5.web.app/"
     },
 
     superchat: {
-        title: "Super Chat",
-        usedTechnologies: ["React", "Bootstrap", "Firebase"],
-        description: "Do you love cats? Have you ever searched for a fun & playful chating app to chat with your friends/co-workers? Super chat has both: cat & chat",
+        title: "SuperChat",
+        usedTechnologies: ["React", "Firebase"],
+        description: "Do you love cats? Have you ever searched for a fun & playful chatting app to chat with your friends/co-workers? Super chat has both: cat & chat",
 		url: "https://superchat-1043c.firebaseapp.com/"
     }
 }

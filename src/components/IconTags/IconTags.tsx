@@ -4,6 +4,7 @@ import { faReact, faBootstrap, faPython, faJs, faJava } from "@fortawesome/free-
 import { IoLogoFirebase } from "react-icons/io5";
 import { SiMongodb } from "react-icons/si";
 import { Icon, IconDefinition, IconProp } from "@fortawesome/fontawesome-svg-core";
+import { TbBrandVite } from "react-icons/tb";
 import { chakra } from "@chakra-ui/react";
 import { IconType } from "react-icons";
 
@@ -26,7 +27,8 @@ const IconTags = ({iconNames}: Props) => {
 	};
 	const iconMapReactIcon: {[key: string] : JSX.Element} = {
 		Firebase: <IoLogoFirebase/>,
-		MongoDB: <SiMongodb />
+		MongoDB: <SiMongodb />,
+		Vite: <TbBrandVite />
 		// firebase
 		// matlab
 		// chakraUI
