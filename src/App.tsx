@@ -15,7 +15,7 @@ function App() {
 			<Logo></Logo>
 		</div>
 		<nav id='navBar'>
-			<Navbar></Navbar>
+			{/* <Navbar></Navbar> */}
 		</nav>
 		<div id='main1'>
 			<DescriptionContainer></DescriptionContainer>
@@ -24,7 +24,7 @@ function App() {
 			<ProfilPicture></ProfilPicture>
 		</div>
 		<div id="projectsAndSkills">
-			<span>Project and skill</span>
+			{/* <span>Project and skill</span> */}
 			<ProjectHeader></ProjectHeader>
 			<CardList></CardList>
 		</div>

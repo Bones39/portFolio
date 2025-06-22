@@ -1,0 +1,11 @@
+// Raf:
+- mettre la grille dans
+	- ajouter les boutons pour manipuler le jeu de la vie EN COURS
+	- ajouter un compteur pour le nombre de génération (semble compliqué...) OK 
+		- 12:40 of https://www.youtube.com/watch?v=DvVt11mPuM0&t=799s
+	- changer le event handler du drag pour click du milieu
+		- click milieu OK
+		- (ou double tap)
+	- sur l'ecran du portable, la page du modal sort de l'écran 
+	- redimensionner la grille pour qu'elle sorte du container
+	- decommenter le code l76 et tester OK

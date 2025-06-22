@@ -3,6 +3,7 @@ import styles from "./CardContainer.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faFontAwesome, faReact, faBootstrap } from '@fortawesome/free-brands-svg-icons'
+import { useNavigate } from 'react-router-dom';
 import IconTags from "../IconTags/IconTags";
 import ModalWindow from "../Modal/ModalWindow";
 import GameOfLife from "../Modal/GameOfLife";
@@ -12,17 +13,26 @@ interface props {
 	title: string;
 	description: string;
 	usedTechnologies: string[];
+	url: string;
 }
 
-const CardContainer = ({ title, description, usedTechnologies }: props) => {
+const CardContainer = ({ title, description, usedTechnologies, url }: props) => {
 
 	const [isOpen, setIsOpen] = useState(false);
+	
+	const redirectOnClick = () => {
+		if (url) {
+			window.open(url, "_blank")
+		} else {
+			setIsOpen(true);
+		}
+	} 
 
 	return (
 		<>
-			<article className={styles.card} onClick={() => setIsOpen(true)}>
+			<article className={styles.card} onClick={redirectOnClick}>
 				<header>
-					{<h2 onClick={() => setIsOpen(true)}>{title}</h2>}
+					{<h2 onClick={redirectOnClick}>{title}</h2>}
 				</header>
 				<div className={styles.description}>
 					{description}

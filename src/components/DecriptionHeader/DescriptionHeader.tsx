@@ -8,7 +8,7 @@ import styles from "./DescriptionHeader.module.css";
 
 const DescriptionHeader = () => {
 		const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		const jobs = ["front end designer", "free lancer", "Consultant", "Engineer"];
+		const jobs = ["Consultant Esker", "Developpeur Javascript"];
 		const [innerDisplayJob, setInnerDisplayJob] = useState("");
 		const [index, setIndex] = useState(0);
 
@@ -55,7 +55,7 @@ const DescriptionHeader = () => {
 			}, 35);
 		}, [innerDisplayJob, index])
 	return(
-		<h1>I am a <span className={styles.emphasized}>{innerDisplayJob}</span></h1>
+		<h1>Je suis un <span className={styles.emphasized}>{innerDisplayJob}</span></h1>
 	)
 }
 export default DescriptionHeader;

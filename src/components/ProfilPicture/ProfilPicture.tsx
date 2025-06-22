@@ -1,4 +1,4 @@
-import profilPicture from '../../assets/cool-profile-picture.jpg';
+import profilPicture from '../../assets/Photo_profil_andraina.png';
 import styles from './ProfilPicture.module.css';
 
 const ProfilPicture = () => {
